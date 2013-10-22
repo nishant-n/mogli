@@ -211,7 +211,7 @@ module Mogli
     end
 
     def create_instance(klass,data)
-      data =JSON.parse(data) unless data.class == Hash
+      data =JSON.parse(data) if data.class == String
       klass_to_create =  determine_class(klass,data)
       if klass_to_create.nil?
         raise UnrecognizeableClassError.new("unable to recognize klass for #{klass.inspect} => #{data.inspect}")
