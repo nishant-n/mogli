@@ -6,7 +6,7 @@ module Mogli
 
     set_search_type :all
 
-    attr_accessor :type
+    attr_accessor :type,:data,:paging
 
     def client=(val)
       @client=val
